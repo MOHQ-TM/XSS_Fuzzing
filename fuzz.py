@@ -39,7 +39,7 @@ def Fuzz():
         req=r.post(f"{url}{i}",headers=head)
         soup=bs(req.content,"html.parser")
         soup=soup.find_all(f"{source}")[ad]
-        if str(i) in str(soup.string):
+        if str(i) in str(soup):
             print(f"\n{C}Payload {R}=> {G}{i}\n{W}")
         else:
             print(f"\n{C}Not Found {R}=> {G}{i}\n{W}")
